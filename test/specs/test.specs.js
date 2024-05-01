@@ -1,7 +1,7 @@
 
 
 describe('Homework Web Automation', () => {
-    it('Test Case 1 - Success', async () => {
+    it('Test Case 1 - Validate Login', async () => {
         await browser.url('https://www.saucedemo.com/')
         
         const username = await browser.$('#user-name')
@@ -15,7 +15,10 @@ describe('Homework Web Automation', () => {
         await loginButton.click()
         
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
+    
+    })
 
+    it('Test Case 2 - Add To Cart Item', async () => {
         const addTocart = await browser.$('#add-to-cart-sauce-labs-backpack')
         const shoppingCart = await browser.$('#shopping_cart_container')
 
@@ -25,8 +28,8 @@ describe('Homework Web Automation', () => {
         const elem = await $('//*[@data-test="item-quantity"]')
         await expect(elem).toHaveText('1')
 
+        await browser.pause(10000)
 
-        await browser.pause(1000)    
     })
 
 })
