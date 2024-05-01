@@ -28,7 +28,7 @@ describe('Homework Web Automation', () => {
         const elem = await $('//*[@data-test="item-quantity"]')
         await expect(elem).toHaveText('1')
 
-        await browser.pause(10000)
+        await browser.pause(3000)
 
     })
 
